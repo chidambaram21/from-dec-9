@@ -1,4 +1,4 @@
-!SESSION 2024-12-21 09:55:35.287 -----------------------------------------------
+!SESSION 2024-12-23 09:28:38.426 -----------------------------------------------
 eclipse.buildId=4.34.0.202411281622
 java.version=21.0.5
 java.vendor=Eclipse Adoptium
@@ -7,9 +7,9 @@ Framework arguments:  -product org.springframework.boot.ide.branding.sts4
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
 
 This is a continuation of log file C:\Users\CHIDAMBARAM\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\.metadata\.bak_4.log
-Created Time: 2024-12-21 10:01:13.589
+Created Time: 2024-12-23 11:49:51.072
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:13.590
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:51.073
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -32,6 +32,56 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.IllegalStateException: Unexpected null value present!
+	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+	... 38 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:51.079
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
+!STACK 0
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
+	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
+	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
+	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.filter(LanguageServers.java:281)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
+	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
+	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
+	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
 	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
 	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
@@ -59,7 +109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:13.597
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:51.080
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -109,7 +159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.095
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:51.567
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -159,7 +209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.096
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:51.568
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -182,8 +232,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -209,7 +259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.097
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:51.569
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -232,8 +282,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -259,7 +309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.098
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:52.268
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -282,8 +332,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -309,7 +359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.099
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:52.269
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -332,8 +382,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -359,7 +409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.100
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:52.270
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -409,7 +459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.845
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:52.781
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -459,7 +509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.847
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:52.783
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -509,7 +559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:14.848
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:52.785
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -559,7 +609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:15.358
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:53.295
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -609,7 +659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:15.360
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:53.297
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -659,7 +709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:15.361
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:53.298
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -709,7 +759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:15.823
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:53.805
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -759,7 +809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:15.825
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:53.806
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -809,7 +859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:15.827
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:53.806
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -859,7 +909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:16.330
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:54.305
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -909,7 +959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:16.332
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:54.306
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -959,7 +1009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:16.333
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:54.308
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1009,7 +1059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:17.899
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:55.466
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1059,7 +1109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:17.901
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:55.467
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1109,7 +1159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:17.904
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:55.467
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1159,7 +1209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:18.403
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:56.535
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1209,7 +1259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:18.404
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:56.537
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1259,7 +1309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:18.405
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:56.538
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1309,7 +1359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:18.685
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:57.274
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1359,7 +1409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:18.687
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:57.275
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1409,7 +1459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:18.688
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:57.276
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1459,7 +1509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:19.197
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:57.796
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1509,7 +1559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:19.199
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:57.797
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1559,7 +1609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:19.200
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:57.798
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1609,7 +1659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:21.523
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:58.290
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1659,7 +1709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:21.525
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:58.292
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1709,7 +1759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:21.527
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:58.293
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1759,7 +1809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:22.030
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:58.913
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1809,7 +1859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:22.031
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:58.915
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1859,7 +1909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:22.032
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:58.915
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1909,7 +1959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:22.625
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:59.650
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -1959,7 +2009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:22.627
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:59.651
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2009,7 +2059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:22.629
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:49:59.652
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2059,7 +2109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:23.136
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:00.372
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2109,7 +2159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:23.138
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:00.373
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2159,7 +2209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:23.140
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:00.374
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2209,7 +2259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.284
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:00.884
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2259,7 +2309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.286
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:00.885
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2309,7 +2359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.286
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:00.885
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2359,7 +2409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.794
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:04.093
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2409,7 +2459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.796
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:04.094
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2459,7 +2509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.798
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:04.094
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2509,7 +2559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.802
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:04.608
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2559,7 +2609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.802
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:04.610
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2609,7 +2659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:27.803
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:04.611
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2659,7 +2709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.325
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:05.119
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2709,7 +2759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.326
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:05.120
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2759,7 +2809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.328
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:05.121
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2809,7 +2859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.831
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:05.619
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2859,7 +2909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.833
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:05.619
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2882,8 +2932,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -2909,7 +2959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.834
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:05.620
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2932,8 +2982,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -2959,7 +3009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.835
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:07.137
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -2982,8 +3032,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -3009,7 +3059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.836
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:07.138
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3032,8 +3082,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -3059,7 +3109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:28.836
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:07.139
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3109,7 +3159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:29.341
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:07.631
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3159,7 +3209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:29.342
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:07.632
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3209,7 +3259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:29.344
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:07.633
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3259,7 +3309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:29.848
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:08.132
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3309,7 +3359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:29.849
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:08.134
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3359,7 +3409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:29.850
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:08.135
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3409,7 +3459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:32.534
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:08.640
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3459,7 +3509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:32.536
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:08.641
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3509,7 +3559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:32.537
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:08.642
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3559,7 +3609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:33.044
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:10.847
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3609,7 +3659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:33.046
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:10.848
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3659,7 +3709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:33.047
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:10.849
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3709,7 +3759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:35.182
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:11.354
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3759,7 +3809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:35.183
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:11.355
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3809,7 +3859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:35.185
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:11.356
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3859,7 +3909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:35.692
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:11.867
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3909,7 +3959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:35.694
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:11.869
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -3959,7 +4009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:35.695
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:11.870
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4009,7 +4059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:36.284
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:12.418
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4059,7 +4109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:36.286
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:12.420
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4109,7 +4159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:36.287
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:12.421
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4159,7 +4209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:36.779
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:13.041
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4209,7 +4259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:36.780
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:13.042
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4259,7 +4309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:36.781
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:13.043
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4309,7 +4359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:37.291
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:13.558
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4359,7 +4409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:37.293
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:13.559
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4409,7 +4459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:37.294
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:13.561
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4459,7 +4509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:38.881
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:14.579
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4509,7 +4559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:38.883
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:14.580
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4559,7 +4609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:38.885
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:14.581
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4609,7 +4659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:39.395
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:15.210
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4659,7 +4709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:39.398
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:15.211
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4709,7 +4759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:39.398
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:15.213
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4732,8 +4782,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -4759,7 +4809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:39.400
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:15.722
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4782,8 +4832,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -4809,7 +4859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:39.400
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:15.724
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4832,8 +4882,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -4859,7 +4909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:39.402
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:15.724
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4909,7 +4959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:40.415
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:17.260
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -4959,7 +5009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:40.416
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:17.261
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5009,7 +5059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:40.417
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:17.263
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5059,7 +5109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:56.408
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:17.762
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5109,7 +5159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:56.410
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:17.763
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5159,7 +5209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:56.411
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:17.765
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5209,7 +5259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:56.919
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:18.270
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5259,7 +5309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:56.921
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:18.272
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5309,7 +5359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:56.923
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:18.273
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5359,7 +5409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:57.344
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:18.782
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5409,7 +5459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:57.346
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:18.783
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5459,7 +5509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:57.347
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:18.784
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5509,7 +5559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:57.856
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:19.293
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5559,7 +5609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:57.858
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:19.295
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5609,7 +5659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:01:57.860
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:19.296
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5659,7 +5709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:01.918
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:20.312
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5709,7 +5759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:01.921
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:20.313
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5759,7 +5809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:01.922
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:20.314
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5809,7 +5859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:02.423
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:20.822
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5859,7 +5909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:02.424
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:20.823
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5882,8 +5932,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -5909,7 +5959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:02.425
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:20.824
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5932,8 +5982,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
-	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -5959,7 +6009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:02.427
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:21.947
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -5982,8 +6032,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -6009,7 +6059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:02.427
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:21.948
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6059,7 +6109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:02.428
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:21.949
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6109,7 +6159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:03.444
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:22.466
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6159,7 +6209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:03.446
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:22.468
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6209,7 +6259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:03.448
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:22.468
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6259,7 +6309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:11.917
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:22.971
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6309,7 +6359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:11.921
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:22.971
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6359,7 +6409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:11.923
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:22.972
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6409,7 +6459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:12.424
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:23.462
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6459,7 +6509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:12.425
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:23.464
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6509,7 +6559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:12.427
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:23.465
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6559,7 +6609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:12.903
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:23.965
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6609,7 +6659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:12.905
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:23.967
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6659,7 +6709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:12.907
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:23.969
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6709,7 +6759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:13.412
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:24.473
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6759,7 +6809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:13.414
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:24.475
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6809,7 +6859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:13.416
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:24.477
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6859,7 +6909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:14.080
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:25.020
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6909,7 +6959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:14.083
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:25.021
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -6959,7 +7009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:14.086
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:25.023
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7009,7 +7059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:14.587
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:25.524
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7059,7 +7109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:14.588
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:25.525
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7109,7 +7159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:14.588
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:25.526
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7159,7 +7209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:20.963
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:27.294
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7209,7 +7259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:20.965
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:27.295
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7259,7 +7309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:20.966
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:27.296
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7309,7 +7359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:21.472
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:27.790
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7359,7 +7409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:21.474
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:27.791
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7409,7 +7459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:21.475
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:27.793
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7459,7 +7509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:21.820
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:28.309
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7509,7 +7559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:21.822
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:28.311
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7559,7 +7609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:21.823
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:28.312
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7609,7 +7659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:22.322
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:28.818
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7659,7 +7709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:22.323
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:28.819
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7709,7 +7759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:22.324
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:28.819
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7759,7 +7809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:24.132
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:29.827
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7809,7 +7859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:24.133
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:29.828
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7859,7 +7909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:24.135
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:29.828
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7909,7 +7959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:24.644
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:31.998
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -7959,7 +8009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:24.646
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:31.999
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8009,7 +8059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:24.647
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:32.000
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8059,7 +8109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:26.817
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:32.512
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8109,7 +8159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:26.818
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:32.513
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8159,7 +8209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:26.820
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:32.514
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8209,7 +8259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:27.327
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:33.014
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8259,7 +8309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:27.329
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:33.015
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8309,7 +8359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:27.330
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:33.016
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8359,7 +8409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:29.930
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:33.539
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8409,7 +8459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:29.933
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:33.540
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8459,7 +8509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:29.935
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:33.542
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8509,7 +8559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:30.436
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:34.754
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8559,7 +8609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:30.438
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:34.755
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8609,7 +8659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:30.440
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:34.756
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8659,7 +8709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:31.405
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:37.150
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8709,7 +8759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:31.407
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:37.152
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8759,7 +8809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:31.407
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:37.152
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8809,7 +8859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:31.911
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:37.660
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8859,7 +8909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:31.913
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:37.661
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8909,7 +8959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:31.914
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:37.662
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -8959,7 +9009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.167
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:38.684
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9009,7 +9059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.169
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:38.685
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9059,7 +9109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.170
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:38.686
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9109,7 +9159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.680
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:39.178
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9159,7 +9209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.682
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:39.179
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9209,7 +9259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.683
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:39.179
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9232,8 +9282,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
-	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -9259,7 +9309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.684
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:40.511
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9282,8 +9332,8 @@ java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexp
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
-	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
 	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
@@ -9309,7 +9359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.685
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:40.512
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9359,7 +9409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:33.686
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:40.513
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9409,7 +9459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.195
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:42.123
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9459,7 +9509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.197
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:42.123
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9509,7 +9559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.198
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:42.133
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9559,7 +9609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.205
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:44.870
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9609,7 +9659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.207
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:44.871
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9659,7 +9709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.209
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:44.872
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9709,7 +9759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.692
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:45.384
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9759,7 +9809,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.694
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:45.385
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9809,7 +9859,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:34.697
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:45.386
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9859,7 +9909,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:35.186
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:46.577
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9909,7 +9959,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:35.188
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:46.578
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -9959,7 +10009,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:35.189
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:46.579
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10009,7 +10059,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:35.692
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:47.079
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10059,7 +10109,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:35.693
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:47.079
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10109,7 +10159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:35.695
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:47.080
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10159,7 +10209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:37.129
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:49.235
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10209,7 +10259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:37.131
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:49.237
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10259,7 +10309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:37.132
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:49.239
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10309,7 +10359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:37.638
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:49.746
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10359,7 +10409,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:37.640
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:49.747
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10409,7 +10459,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:37.641
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:49.748
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10459,7 +10509,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:39.390
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:50.257
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10509,7 +10559,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:39.392
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:50.259
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10559,7 +10609,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:39.393
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:50.259
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10609,7 +10659,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:39.901
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:50.765
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10659,7 +10709,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:39.904
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:50.766
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10709,7 +10759,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:02:39.906
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:50.766
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -10759,21 +10809,12 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:03:14.004
-!MESSAGE Javadoc unavailable. Failed to obtain it.
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:51.274
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
-Caused by: java.lang.IllegalStateException: Unexpected null value present!
-	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
-	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
-	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -10791,27 +10832,39 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:04:29.383
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+	... 38 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:51.276
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
+!STACK 0
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -10829,27 +10882,39 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:04:30.353
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+	... 38 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:51.276
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
+!STACK 0
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -10867,27 +10932,39 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:10:17.215
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+	... 38 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:52.748
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
+!STACK 0
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -10905,27 +10982,39 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:10:19.624
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+	... 38 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:52.749
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
+!STACK 0
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -10943,27 +11032,39 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:10:20.337
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+	... 38 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:52.750
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
+!STACK 0
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -10981,51 +11082,34 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:10:24.876
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:52)
+	at org.eclipse.lsp4e.operations.inlayhint.InlayHintProvider.provideCodeMinings(InlayHintProvider.java:80)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
-	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
-	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
-	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
-	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.filter(LanguageServers.java:281)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
-	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
-	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
-	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
-	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
+	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:11:13.989
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:53.260
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -11075,7 +11159,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:11:13.991
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:53.262
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -11125,7 +11209,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:11:13.994
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:53.263
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -11175,7 +11259,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:12:41.513
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:53.775
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -11225,7 +11309,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:12:41.515
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:53.776
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -11275,7 +11359,7 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.jface.text 4 0 2024-12-21 10:12:41.517
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:53.776
 !MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
 java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
@@ -11325,21 +11409,12 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
 	... 38 more
 
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:12:53.270
-!MESSAGE Javadoc unavailable. Failed to obtain it.
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:54.284
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
 !STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
-Caused by: java.lang.IllegalStateException: Unexpected null value present!
-	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
-	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
-	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -11357,139 +11432,39 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
 	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
 	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 2 0 2024-12-21 10:12:55.372
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
-Caused by: java.lang.IllegalStateException: Unexpected null value present!
-	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
-	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
-	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
-	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
-	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
-	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
-	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.filter(LanguageServers.java:281)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:40)
+	at org.eclipse.lsp4e.operations.codelens.CodeLensProvider.provideCodeMinings(CodeLensProvider.java:66)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
 	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
 	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
-	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
-	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
-	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
-	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
-	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:74)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.initiateHoverRequest(LSPTextHover.java:203)
-	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfoFuture(LSPTextHover.java:87)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:50)
-	... 4 more
-
-!ENTRY org.eclipse.lsp4e 4 0 2024-12-21 10:12:56.429
-!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler$LanguageServerDocumentHandlerExecutor.matches(LSPDocumentAbstractHandler.java:69)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler$LanguageServerDocumentHandlerExecutor.lambda$0(LSPDocumentAbstractHandler.java:59)
-	at java.base/java.util.stream.MatchOps$1MatchSink.accept(MatchOps.java:90)
-	at java.base/java.util.AbstractList$RandomAccessSpliterator.tryAdvance(AbstractList.java:708)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
 	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:230)
-	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:196)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
 	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.anyMatch(ReferencePipeline.java:632)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler$LanguageServerDocumentHandlerExecutor.anyMatching(LSPDocumentAbstractHandler.java:59)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler.setEnabled(LSPDocumentAbstractHandler.java:123)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler.setEnabled(LSPDocumentAbstractHandler.java:113)
-	at org.eclipse.lsp4e.operations.rename.LSPRenameHandler.setEnabled(LSPRenameHandler.java:71)
-	at org.eclipse.ui.internal.handlers.HandlerProxy.setEnabled(HandlerProxy.java:223)
-	at org.eclipse.ui.internal.handlers.E4HandlerProxy.setEnabled(E4HandlerProxy.java:134)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
-	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
-	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.setEnabled(HandlerServiceHandler.java:91)
-	at org.eclipse.core.commands.Command.setEnabled(Command.java:856)
-	at org.eclipse.ui.menus.CommandContributionItem.isEnabled(CommandContributionItem.java:932)
-	at org.eclipse.ui.menus.CommandContributionItem.updateMenuItem(CommandContributionItem.java:536)
-	at org.eclipse.ui.menus.CommandContributionItem.update(CommandContributionItem.java:486)
-	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:857)
-	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:857)
-	at org.eclipse.ui.internal.Workbench.updateActiveWorkbenchWindowMenuManager(Workbench.java:3246)
-	at org.eclipse.ui.internal.Workbench.lambda$0(Workbench.java:3228)
-	at org.eclipse.jface.bindings.BindingManager.fireBindingManagerChanged(BindingManager.java:896)
-	at org.eclipse.jface.bindings.BindingManager.setActiveBindings(BindingManager.java:2178)
-	at org.eclipse.jface.bindings.BindingManager.recomputeBindings(BindingManager.java:1737)
-	at org.eclipse.jface.bindings.BindingManager.contextManagerChanged(BindingManager.java:693)
-	at org.eclipse.core.commands.contexts.ContextManager.fireContextManagerChanged(ContextManager.java:164)
-	at org.eclipse.core.commands.contexts.ContextManager.removeActiveContext(ContextManager.java:245)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.updateContext(ContextAuthority.java:695)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.activateContext(ContextAuthority.java:168)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.checkWindowType(ContextAuthority.java:230)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.updateEvaluationContext(ContextAuthority.java:723)
-	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:269)
-	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:84)
-	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.lambda$2(WorkbenchSourceProvider.java:690)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1332)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1172)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1197)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1182)
-	at org.eclipse.swt.widgets.Decorations.WM_ACTIVATE(Decorations.java:1523)
-	at org.eclipse.swt.widgets.Shell.WM_ACTIVATE(Shell.java:2388)
-	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4729)
-	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
-	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1482)
-	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2361)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5177)
-	at org.eclipse.swt.internal.win32.OS.PeekMessage(Native Method)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3785)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:663)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:570)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:178)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
+	... 38 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-12-23 11:50:54.285
+!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
+!STACK 0
+java.util.concurrent.CompletionException: java.lang.IllegalStateException: Unexpected null value present!
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:687)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
 	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
 	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
@@ -11505,110 +11480,31 @@ Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
 	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
 	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
-	... 67 more
-
-!ENTRY org.eclipse.lsp4e 4 0 2024-12-21 10:12:56.432
-!MESSAGE java.lang.IllegalStateException: Unexpected null value present!
-!STACK 0
-java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Unexpected null value present!
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler$LanguageServerDocumentHandlerExecutor.matches(LSPDocumentAbstractHandler.java:69)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler$LanguageServerDocumentHandlerExecutor.lambda$0(LSPDocumentAbstractHandler.java:59)
-	at java.base/java.util.stream.MatchOps$1MatchSink.accept(MatchOps.java:90)
-	at java.base/java.util.AbstractList$RandomAccessSpliterator.tryAdvance(AbstractList.java:708)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at org.eclipse.lsp4e.LanguageServers.executeOnServers(LanguageServers.java:421)
+	at org.eclipse.lsp4e.LanguageServers.collectAll(LanguageServers.java:91)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:62)
+	at org.eclipse.lsp4e.operations.color.DocumentColorProvider.provideCodeMinings(DocumentColorProvider.java:89)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.lambda$2(CodeMiningManager.java:191)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
 	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:230)
-	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:196)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
 	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.anyMatch(ReferencePipeline.java:632)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler$LanguageServerDocumentHandlerExecutor.anyMatching(LSPDocumentAbstractHandler.java:59)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler.setEnabled(LSPDocumentAbstractHandler.java:123)
-	at org.eclipse.lsp4e.internal.LSPDocumentAbstractHandler.setEnabled(LSPDocumentAbstractHandler.java:113)
-	at org.eclipse.lsp4e.operations.rename.LSPRenameHandler.setEnabled(LSPRenameHandler.java:71)
-	at org.eclipse.ui.internal.handlers.HandlerProxy.setEnabled(HandlerProxy.java:223)
-	at org.eclipse.ui.internal.handlers.E4HandlerProxy.canExecute(E4HandlerProxy.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
-	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
-	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.isEnabled(HandlerServiceHandler.java:68)
-	at org.eclipse.core.commands.Command.isEnabled(Command.java:832)
-	at org.eclipse.ui.menus.CommandContributionItem.isEnabled(CommandContributionItem.java:933)
-	at org.eclipse.ui.menus.CommandContributionItem.updateMenuItem(CommandContributionItem.java:536)
-	at org.eclipse.ui.menus.CommandContributionItem.update(CommandContributionItem.java:486)
-	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:857)
-	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:857)
-	at org.eclipse.ui.internal.Workbench.updateActiveWorkbenchWindowMenuManager(Workbench.java:3246)
-	at org.eclipse.ui.internal.Workbench.lambda$0(Workbench.java:3228)
-	at org.eclipse.jface.bindings.BindingManager.fireBindingManagerChanged(BindingManager.java:896)
-	at org.eclipse.jface.bindings.BindingManager.setActiveBindings(BindingManager.java:2178)
-	at org.eclipse.jface.bindings.BindingManager.recomputeBindings(BindingManager.java:1737)
-	at org.eclipse.jface.bindings.BindingManager.contextManagerChanged(BindingManager.java:693)
-	at org.eclipse.core.commands.contexts.ContextManager.fireContextManagerChanged(ContextManager.java:164)
-	at org.eclipse.core.commands.contexts.ContextManager.removeActiveContext(ContextManager.java:245)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.updateContext(ContextAuthority.java:695)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.activateContext(ContextAuthority.java:168)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.checkWindowType(ContextAuthority.java:230)
-	at org.eclipse.ui.internal.contexts.ContextAuthority.updateEvaluationContext(ContextAuthority.java:723)
-	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:269)
-	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:84)
-	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.lambda$2(WorkbenchSourceProvider.java:690)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1332)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1172)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1197)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1182)
-	at org.eclipse.swt.widgets.Decorations.WM_ACTIVATE(Decorations.java:1523)
-	at org.eclipse.swt.widgets.Shell.WM_ACTIVATE(Shell.java:2388)
-	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4729)
-	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
-	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1482)
-	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2361)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5177)
-	at org.eclipse.swt.internal.win32.OS.PeekMessage(Native Method)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3785)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:663)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:570)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:178)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.getCodeMinings(CodeMiningManager.java:197)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.updateCodeMinings(CodeMiningManager.java:142)
+	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:131)
+	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1333)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1685)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 Caused by: java.lang.IllegalStateException: Unexpected null value present!
 	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$19(LanguageServerWrapper.java:940)
 	at java.base/java.util.concurrent.CompletableFuture.uniApplyNow(CompletableFuture.java:684)
-	at java.base/java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:662)
-	at java.base/java.util.concurrent.CompletableFuture.thenApply(CompletableFuture.java:2200)
-	at org.eclipse.lsp4e.LanguageServerWrapper.getServerCapabilitiesAsync(LanguageServerWrapper.java:940)
-	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.filter(LanguageServers.java:281)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
-	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
-	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
-	at org.eclipse.lsp4e.LanguageServers$LanguageServerDocumentExecutor.getServers(LanguageServers.java:289)
-	... 67 more
+	... 38 more
