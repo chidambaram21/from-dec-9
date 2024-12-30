@@ -34,10 +34,11 @@ public class Program11 {
 
 		}//if
 		else {
-			isAnagram = false;
+			is Anagram = false;
 		}
 
-		if(isAnagram == true) System.out.println("Yes it is Anagram");
+		if(isAnagram == true) System.out.println("Yes it is Anagram"){
+			
 		else System.out.println("Not Anagram");
 	}
 
@@ -56,6 +57,7 @@ public class Program11 {
 	}
 
 }
+
 
 	
 
